@@ -1,0 +1,29 @@
+ARG EBXADDONSVERSION
+FROM mickaelgermemont/ebx-addons:${EBXADDONSVERSION} as base
+
+FROM maven:3.6-jdk-8
+ARG EBXADDONSVERSION
+
+RUN mkdir -p /data/ebx /data/ebx/lib /data/ebx/webapps
+WORKDIR /data/ebx
+
+COPY --from=base /data/ebx/lib/* ./lib/
+RUN cp lib/ebx-addons-javadoc.zip lib/ebx-addons-javadoc.jar
+
+COPY --from=base /data/ebx/wars/*.war ./webapps/
+
+ENV groupId=com.orchestranetworks.ebx
+ENV groupIdPsLibsCommon=com.orchestranetworks.ebx.ps.common
+ENV repoId=mickaelgermemont.repo.releases.admin
+ENV repoUrl=http://javastore.mickaelgermemont.com:8081/repository/releases
+
+ENV addonVersion=${EBXADDONSVERSION}
+ENV warFolder=./webapps
+ENV libFolder=./lib
+
+RUN echo ${ebxAddonsVersion}
+COPY pushAddons.sh .
+RUN chmod +x pushAddons.sh
+COPY settings.xml .
+
+CMD ["/data/ebx/pushAddons.sh"]

@@ -1,0 +1,27 @@
+<settings>
+<profiles>
+    <profile>
+      <id>ebxdev</id>
+      <repositories>
+        <repository>
+          <id>ebxdev-releases</id>
+          <releases><enabled>true</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></releases>
+          <snapshots><enabled>false</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></snapshots>
+          <url>http://javastore.mickaelgermemont.com:8081/repository/maven-releases</url>
+          <layout>default</layout>
+        </repository>
+        <repository>
+          <id>ebxdev-snapshots</id>
+          <releases><enabled>false</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></releases>
+          <snapshots><enabled>true</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></snapshots>
+          <url>http://javastore.mickaelgermemont.com:8081/repository/maven-snapshots</url>
+          <layout>default</layout>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>ebxdev</activeProfile>
+  </activeProfiles>
+</settings>

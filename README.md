@@ -4,7 +4,7 @@
 
 copy your ~/.m2/settings in this folder. you need settings.xml to provide credentials to authenticate when uploading files to nexus
 
-# commands for EBX
+# commands for EBX 5.8.x
 
 see https://dl.orchestranetworks.com/restricted/download/ebx_CD_5.8.1.1067-0033.zip
 
@@ -17,7 +17,25 @@ $ docker tag ebx-dataonly:$ebxVersionNumber mickaelgermemont/ebx:$ebxVersionNumb
 $ docker push mickaelgermemont/ebx:$ebxVersionNumber
 
 $ cd ../ebx-nexus-deploy
-$ docker build --build-arg EBXVERSION=$ebxVersionNumber -t ebx-deploy:$ebxVersionNumber .
+$ docker build --build-arg COMMAND=push58.sh --build-arg EBXVERSION=$ebxVersionNumber -t ebx-deploy:$ebxVersionNumber .
+$ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxVersionNumber
+
+```
+
+# commands for EBX 5.9.0
+
+see https://dl.orchestranetworks.com/restricted/download/ebx_CD_5.9.0.1099-0003.zip
+
+```
+$ export ebxVersionNumber=5.9.0.1099-0003
+$ cd ../docker-ebx-dataonly/
+$ docker build --build-arg EBXFILE=ebx_CD_5.9.0.1099-0003.zip -t ebx-dataonly:$ebxVersionNumber .
+$ docker login
+$ docker tag ebx-dataonly:$ebxVersionNumber mickaelgermemont/ebx:$ebxVersionNumber
+$ docker push mickaelgermemont/ebx:$ebxVersionNumber
+
+$ cd ../ebx-nexus-deploy
+$ docker build --build-arg COMMAND=push59.sh --build-arg EBXVERSION=$ebxVersionNumber -t ebx-deploy:$ebxVersionNumber .
 $ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxVersionNumber
 
 ```

@@ -21,8 +21,10 @@ ENV ebxVersion=${EBXVERSION}
 ENV ebxWarFolder=./webapps
 ENV ebxLibFolder=./lib
 
+ARG COMMAND
+
 RUN echo ${ebxVersion}
-COPY push.sh .
+COPY ${COMMAND} push.sh
 RUN chmod +x push.sh
 COPY settings.xml .
 

@@ -5,4 +5,3 @@ mvn --settings settings.xml deploy:deploy-file -Dfile=$ebxWarFolder/ebx-root-1.0
 mvn --settings settings.xml deploy:deploy-file -Dfile=$ebxWarFolder/ebx-manager.war -DartifactId=ebx-manager -Dpackaging=war -Dversion=$ebxVersion  -DgroupId=$groupId -DrepositoryId=$repoId -Durl=$repoUrl
 mvn --settings settings.xml deploy:deploy-file -Dfile=$ebxWarFolder/ebx-dma.war -DartifactId=ebx-dma -Dpackaging=war -Dversion=$ebxVersion -DgroupId=$groupId -DrepositoryId=$repoId -Durl=$repoUrl
 mvn --settings settings.xml deploy:deploy-file -Dfile=$ebxWarFolder/ebx-dataservices.war -DartifactId=ebx-dataservices -Dpackaging=war -Dversion=$ebxVersion -DgroupId=$groupId -DrepositoryId=$repoId -Durl=$repoUrl
-#mvn deploy:deploy-file -Dfile=$ebxWarFolder/ebx-ui.war -DartifactId=ebx-ui -Dpackaging=war -Dversion=$ebxVersion -DgroupId=$groupId -DrepositoryId=$repoId -Durl=$repoUrl

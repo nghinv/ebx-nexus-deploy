@@ -1,0 +1,20 @@
+FROM maven:3.6-jdk-8
+ARG PSLIBVERSION
+
+RUN mkdir -p /data/ebx/lib
+WORKDIR /data/ebx
+
+COPY presales-toolbox.jar /data/ebx/lib
+
+ENV groupIdPsLibs=com.tibco.ebx.ps
+ENV repoId=mickaelgermemont.repo.releases.admin
+ENV repoUrl=http://javastore.mickaelgermemont.com:8081/repository/releases
+
+ENV libFolder=/data/ebx/lib
+ENV pslibVersion=${PSLIBVERSION}
+
+COPY pushPsLibs.sh .
+RUN chmod +x pushPsLibs.sh
+COPY settings.xml .
+
+CMD ["/data/ebx/pushPsLibs.sh"]

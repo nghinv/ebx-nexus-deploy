@@ -21,9 +21,12 @@ ENV addonVersion=${EBXADDONSVERSION}
 ENV warFolder=./webapps
 ENV libFolder=./lib
 
+ARG COMMAND
+
 RUN echo ${ebxAddonsVersion}
-COPY pushAddons.sh .
+COPY ${COMMAND} pushAddons.sh
 RUN chmod +x pushAddons.sh
 COPY settings.xml .
+
 
 CMD ["/data/ebx/pushAddons.sh"]

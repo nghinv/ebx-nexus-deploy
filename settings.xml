@@ -8,18 +8,18 @@
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors-->
-  
+
 	<servers>
-        <server>
-          <id>mickaelgermemont.repo.releases.admin</id>
-          <username>admin</username>
-          <password>veryH@rdPwd</password>
-        </server>
-        <server>
-          <id>mickaelgermemont.repo.snapshots.admin</id>
-          <username>admin</username>
-          <password>veryH@rdPwd</password>
-        </server>
+    <server>
+      <id>mickaelgermemont.repo.releases.admin</id>
+      <username>admin</username>
+      <password>veryH@rdPwd</password>
+    </server>
+    <server>
+      <id>mickaelgermemont.repo.snapshots.admin</id>
+      <username>admin</username>
+      <password>veryH@rdPwd</password>
+    </server>
 		<server>
 		  <id>mickaelgermemont.repo.releases</id>
 		  <username>deployment</username>
@@ -37,14 +37,14 @@
       <id>ebxdev</id>
       <repositories>
         <repository>
-          <id>ebxdev-releases</id>
+          <id>mickaelgermemont.repo.releases</id>
           <releases><enabled>true</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></releases>
           <snapshots><enabled>false</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></snapshots>
-          <url>http://javastore.mickaelgermemont.com:8081/repository/maven-releases</url>
+          <url>http://javastore.mickaelgermemont.com:8081/repository/releases</url>
           <layout>default</layout>
         </repository>
         <repository>
-          <id>ebxdev-snapshots</id>
+          <id>mickaelgermemont.repo.snapshots</id>
           <releases><enabled>false</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></releases>
           <snapshots><enabled>true</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></snapshots>
           <url>http://javastore.mickaelgermemont.com:8081/repository/maven-snapshots</url>
@@ -57,5 +57,5 @@
   <activeProfiles>
     <activeProfile>ebxdev</activeProfile>
   </activeProfiles>
-  	
+
 </settings>

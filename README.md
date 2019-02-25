@@ -32,6 +32,7 @@ see https://dl.orchestranetworks.com/restricted/download/ebx_CD_5.9.0.1103.zip
 
 ```
 $ export ebxVersionNumber=5.9.0.1103
+
 $ cd ../docker-ebx-dataonly/
 $ docker build --build-arg EBXFILE=ebx_CD_$ebxVersionNumber.zip -t ebx-dataonly:$ebxVersionNumber .
 $ docker login
@@ -41,6 +42,9 @@ $ docker push mickaelgermemont/ebx:$ebxVersionNumber
 $ cd ../ebx-nexus-deploy
 $ docker build --build-arg COMMAND=push59.sh --build-arg EBXVERSION=$ebxVersionNumber -t ebx-deploy:$ebxVersionNumber .
 $ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxVersionNumber
+
+$ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxVersionNumber /bin/bash
+
 ```
 
 # commands for EBX ADDONS

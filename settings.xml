@@ -1,12 +1,12 @@
 <settings>
 	<servers>
     <server>
-      <id>psus.ebx.repo.releases.admin</id>
+      <id>psus.ebx.repo.releases</id>
       <username>admin</username>
       <password>veryH@rdPwd</password>
     </server>
     <server>
-      <id>psus.ebx.repo.snapshots.admin</id>
+      <id>psus.ebx.repo.snapshots</id>
       <username>admin</username>
       <password>veryH@rdPwd</password>
     </server>

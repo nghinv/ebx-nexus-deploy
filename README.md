@@ -21,7 +21,6 @@ $ docker push mickaelgermemont/ebx:$ebxVersionNumber
 $ cd ../ebx-nexus-deploy
 $ docker build --build-arg COMMAND=push58.sh --build-arg EBXVERSION=$ebxVersionNumber -t ebx-deploy:$ebxVersionNumber .
 $ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxVersionNumber
-
 ```
 
 # commands for EBX 5.9.0

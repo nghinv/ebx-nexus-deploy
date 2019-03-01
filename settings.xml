@@ -1,35 +1,15 @@
 <settings>
-
-  <!--mirrors>
-    <mirror>
-      <id>antelink</id>
-      <name>antelink Central</name>
-      <url>http://maven.antelink.com/content/repositories/central/</url>
-      <mirrorOf>central</mirrorOf>
-    </mirror>
-  </mirrors-->
-
 	<servers>
     <server>
-      <id>mickaelgermemont.repo.releases.admin</id>
+      <id>psus.ebx.repo.releases.admin</id>
       <username>admin</username>
       <password>veryH@rdPwd</password>
     </server>
     <server>
-      <id>mickaelgermemont.repo.snapshots.admin</id>
+      <id>psus.ebx.repo.snapshots.admin</id>
       <username>admin</username>
       <password>veryH@rdPwd</password>
     </server>
-		<server>
-		  <id>mickaelgermemont.repo.releases</id>
-		  <username>deployment</username>
-		  <password>d3ployAg@1n</password>
-		</server>
-		<server>
-		  <id>mickaelgermemont.repo.snapshots</id>
-		  <username>deployment</username>
-		  <password>d3ployAg@1n</password>
-		</server>
 	</servers>
 
 <profiles>
@@ -37,17 +17,17 @@
       <id>ebxdev</id>
       <repositories>
         <repository>
-          <id>mickaelgermemont.repo.releases</id>
+          <id>psus.ebx.repo.releases</id>
           <releases><enabled>true</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></releases>
           <snapshots><enabled>false</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></snapshots>
-          <url>http://javastore.mickaelgermemont.com:8081/repository/releases</url>
+          <url>http://ec2-54-85-42-45.compute-1.amazonaws.com:8081/repository/maven-releases</url>
           <layout>default</layout>
         </repository>
         <repository>
-          <id>mickaelgermemont.repo.snapshots</id>
+          <id>psus.ebx.repo.snapshots</id>
           <releases><enabled>false</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></releases>
           <snapshots><enabled>true</enabled><updatePolicy>always</updatePolicy><checksumPolicy>warn</checksumPolicy></snapshots>
-          <url>http://javastore.mickaelgermemont.com:8081/repository/maven-snapshots</url>
+          <url>http://ec2-54-85-42-45.compute-1.amazonaws.com:8081/repository/maven-snapshots</url>
           <layout>default</layout>
         </repository>
       </repositories>
@@ -55,7 +35,7 @@
   </profiles>
 
   <activeProfiles>
-    <activeProfile>ebxdev</activeProfile>
+    <activeProfile>ebx</activeProfile>
   </activeProfiles>
 
 </settings>

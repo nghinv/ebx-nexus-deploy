@@ -14,7 +14,7 @@
 
 <profiles>
     <profile>
-      <id>ebxdev</id>
+      <id>ebx</id>
       <repositories>
         <repository>
           <id>psus.ebx.repo.releases</id>

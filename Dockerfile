@@ -14,7 +14,7 @@ RUN jar -cvf ./lib/ebx-javadoc.jar ./Java_API/*
 
 ENV groupId=com.orchestranetworks.ebx
 ENV groupIdPsLibsCommon=com.orchestranetworks.ebx.ps.common
-ENV repoId=psus.ebx.repo.releases.admin
+ENV repoId=psus.ebx.repo.releases
 ENV repoUrl=http://ec2-54-85-42-45.compute-1.amazonaws.com:8081/repository/maven-releases
 
 ENV ebxVersion=${EBXVERSION}

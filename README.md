@@ -30,6 +30,7 @@ see https://dl.orchestranetworks.com/restricted/download/ebx_CD_5.9.0.1099-0003.
 see https://dl.orchestranetworks.com/restricted/download/ebx_CD_5.9.0.1103.zip
 
 ```
+$ export ebxVersionNumber=5.9.0.1099-0003
 $ export ebxVersionNumber=5.9.0.1103
 
 $ cd ../docker-ebx-dataonly/
@@ -44,6 +45,7 @@ $ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxVersionNumber
 
 $ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxVersionNumber /bin/bash
 
+$ docker rmi $(docker images |grep 'ebx-deploy')
 ```
 
 # commands for EBX ADDONS
@@ -68,6 +70,12 @@ $ docker build --build-arg EBX_FILE=ebx_5.9.0.1103_addons_4.0.3.0038-0002-0001.z
 $ docker login
 $ docker tag ebx-addons-dataonly:$ebxAddonsVersionNumber mickaelgermemont/ebx-addons:$ebxAddonsVersionNumber
 $ docker push mickaelgermemont/ebx-addons:$ebxAddonsVersionNumber
+
+$ export ebxVersionNumber=5.9.0.1103
+$ export ebxAddonsVersionNumber=5.9.0.1103_addons_4.0.3.0038-0002-0001
+$ docker run --rm -it --name ebx_addons mickaelgermemont/ebx-addons:$ebxAddonsVersionNumber /bin/bash
+$ docker cp ebx_addons:/data/ebx/lib ~/EBXDevTools/$ebxVersionNumber/
+$ docker cp ebx_addons:/data/ebx/wars ~/EBXDevTools/$ebxVersionNumber/
 ```
 
 ```

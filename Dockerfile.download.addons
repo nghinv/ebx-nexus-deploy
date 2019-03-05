@@ -1,0 +1,13 @@
+FROM tomcat:9.0.12-jre11
+
+ARG EBX_FILE
+ENV EBX_DL_USER support
+ENV EBX_DL_PASSWORD on@ebx67
+
+###
+### download EBX addons
+
+RUN mkdir -p /data/ebx \
+  && curl -k -SL -u "${EBX_DL_USER}:${EBX_DL_PASSWORD}" -o /data/ebx/ebx.zip https://dl.orchestranetworks.com/restricted/download/addons/${EBX_FILE} \
+  && unzip -q -d /data/ebx/ /data/ebx/ebx.zip \
+  && rm -rf /data/ebx/ebx.zip

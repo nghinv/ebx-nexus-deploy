@@ -62,6 +62,7 @@ $ export EBXADDONDOCKER_COMMAND=pushAddons58.sh
 $ cd ../docker-ebx-addons-dataonly/
 $ docker build --build-arg EBX_FILE=ebx_5.8.1.1067-0035_addons_3.20.9.0036-0025.zip -t ebx-addons-dataonly:$ebxAddonsVersionNumber .
 
+$ export ebxAddonsVersionNumber=5.9.0.1099-0003_addons_4.0.2.0038-0002
 $ export ebxAddonsVersionNumber=5.9.0.1103_addons_4.0.3.0038-0002-0001
 $ export EBXADDONDOCKER_COMMAND=pushAddons59.sh
 $ cd ../docker-ebx-addons-dataonly/

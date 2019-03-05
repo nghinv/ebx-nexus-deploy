@@ -45,7 +45,8 @@ $ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxVersionNumber
 
 $ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxVersionNumber /bin/bash
 
-$ docker rmi $(docker images |grep 'ebx-deploy')
+$ docker rmi $(docker images | grep 'ebx-deploy')
+$ docker rmi $(docker images | grep 'ebxps-deploy')
 ```
 
 # commands for EBX ADDONS
@@ -82,7 +83,7 @@ $ docker cp ebx_addons:/data/ebx/wars ~/EBXDevTools/$ebxVersionNumber/
 ```
 $ cd ../ebx-nexus-deploy
 $ docker build --file Dockerfile.addon --build-arg COMMAND=$EBXADDONDOCKER_COMMAND --build-arg EBXADDONSVERSION=$ebxAddonsVersionNumber -t ebx-deploy:$ebxAddonsVersionNumber .
-$ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxAddonsVersionNumber
+$ docker run -it --rm --name ebx-deploy ebx-deploy:$ebxAddonsVersionNumber
 ```
 
 # commands for EBX PS Libs
@@ -91,7 +92,7 @@ $ docker run -it --rm --name ebx-nexus-deploy ebx-deploy:$ebxAddonsVersionNumber
 $ cd ../ebx-nexus-deploy
 $ export pslibVersion=20181210
 $ docker build --file Dockerfile.ps --build-arg PSLIBVERSION=$pslibVersion -t ebxps-deploy:$pslibVersion .
-$ docker run -it --rm --name ebxps_deploy ebxps-deploy:$pslibVersion
+$ docker run -it --rm --name ebxps-deploy ebxps-deploy:$pslibVersion
 ```
 
 ## debugging

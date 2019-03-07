@@ -5,6 +5,7 @@ RUN mkdir -p /data/ebx/lib
 WORKDIR /data/ebx
 
 COPY presales-toolbox.jar /data/ebx/lib
+COPY adminpermissionsutil-1.0.jar /data/ebx/lib
 
 ENV groupIdPsLibs=com.tibco.ebx.ps
 ENV repoId=psus.ebx.repo.releases

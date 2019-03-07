@@ -185,6 +185,7 @@ mkdir -p ~/EBXDevTools/$ebxVersionNumber/ ~/EBXDevTools/$ebxVersionNumber/addons
 docker run --rm -it --name ebx-$ebxVersionNumber mickaelgermemont/ebx:$ebxVersionNumber /bin/bash
 docker cp ebx-$ebxVersionNumber:/data/ebx/ebx.software/lib/ebx.jar ~/EBXDevTools/$ebxVersionNumber/
 docker cp ebx-$ebxVersionNumber:/data/ebx/ebx.software/webapps/wars-packaging ~/EBXDevTools/$ebxVersionNumber/
+docker cp ebx-$ebxVersionNumber:/data/ebx/ebx.software/files/ebx.properties .
 
 ls -altr ~/EBXDevTools/$ebxVersionNumber/
 open ~/EBXDevTools/$ebxVersionNumber/
